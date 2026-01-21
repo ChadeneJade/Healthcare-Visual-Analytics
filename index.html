@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthcare Visual Analytics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://js.arcgis.com/4.26/"></script>
+</head>
+<body>
+
+<header class="app-header">
+    <h1> Healthcare Visual Analytics</h1>
+    <p>Analyse interactive des patients, tests et facturations par hôpital</p>
+</header>
+
+<section class="controls">
+    <div class="control">
+        <label for="genderFilter">Sexe :</label>
+        <select id="genderFilter">
+            <option value="all">Tous</option>
+            <option value="male">Homme</option>
+            <option value="female">Femme</option>
+        </select>
+    </div>
+
+    <div class="control">
+        <label for="ageFilter">Groupe d'âge :</label>
+        <select id="ageFilter">
+            <option value="all">Tous</option>
+            <option value="0-18">0–18</option>
+            <option value="19-40">19–40</option>
+            <option value="41-65">41–65</option>
+            <option value="65+">65+</option>
+        </select>
+    </div>
+
+    <button id="resetBtn"> Réinitialiser</button>
+</section>
+
+<main class="dashboard">
+
+    <div class="chart-card" id="chart-test-results">
+        <div class="chart-header">
+            <h2>Distribution des résultats de tests</h2>
+            <div class="chart-options">🔘 Donut</div>
+        </div>
+    </div>
+
+    <div class="chart-card" id="chart-medical-conditions">
+        <div class="chart-header">
+            <h2>Conditions médicales vs résultats</h2>
+            <div class="chart-options">🟦 Heatmap</div>
+        </div>
+    </div>
+
+    <div class="chart-card" id="chart-billing">
+        <div class="chart-header">
+            <h2>Analyse des montants facturés</h2>
+            <div class="chart-options">📈 Évolution & distribution</div>
+        </div>
+    </div>
+
+    <div class="chart-card" id="chart-demographics">
+        <div class="chart-header">
+            <h2>Démographie des patients</h2>
+            <div class="chart-options">👥 Barres groupées</div>
+        </div>
+    </div>
+
+</main>
+
+
+<section class="map-section">
+    <h2> Carte des hôpitaux</h2>
+    <p>Cliquez sur un hôpital pour filtrer les visualisations.</p>
+    <div id="mapDiv" style="width:100%; height:500px;"></div>
+
+</section>
+
+<footer>
+    <p>TP Healthcare Visual Analytics — 2025</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/d3_visuals.js"></script>
+<script src="js/map.js"></script>
+
+</body>
+</html>
