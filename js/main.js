@@ -1,4 +1,4 @@
-d3.csv("data/healthcare_dataset.csv").then(rawData => {
+d3.csv("../data/healthcare_dataset.csv").then(rawData => {
 
     // Nettoyage + typage + valeurs manquantes
     const data = rawData.map(d => {
